@@ -5,7 +5,8 @@ import {
   People as UsersIcon,
   AdminPanelSettings,
   Event,
-  AddCircleOutline
+  AddCircleOutline,
+  MoneyOffRounded
 } from '@mui/icons-material';
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
@@ -31,6 +32,7 @@ const navItems = [
   { text: 'Create Draw', icon: <AddCircleOutline />, path: '/createdraw' },
   { text: 'Manage Draws', icon: <Event />, path: '/managedraws' },
   { text: 'Manage Admin ', icon: <AdminPanelSettings />, path: '/manageadmin' },
+   { text: 'Manage Finance ', icon: <MoneyOffRounded />, path: '/financedashboard' },
   
 
 ];

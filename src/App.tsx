@@ -13,6 +13,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { AdminManagement } from './features/admin-management/AdminManagement';
 import { AuthProvider } from './auth/AuthContext';
+import FinanceDashboard from './features/finance/FinanceDashboard';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                   <Route path="/createdraw" element={<CreateDrawPage />} />
                   <Route path="/managedraws" element={<DrawList />} />
                   <Route path="/manageadmin" element={<AdminManagement />} />
+                  <Route path="/financedashboard" element={<FinanceDashboard />} />
                 </Route>
               </Routes>
               </AuthProvider>
