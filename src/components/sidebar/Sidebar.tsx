@@ -35,7 +35,7 @@ const navItems = [
   { text: 'Manage Admin ', icon: <AdminPanelSettings />, path: '/manageadmin' },
   { text: 'Manage Finance ', icon: <MoneyOffRounded />, path: '/financedashboard' },
   { text: 'Payout Dash ', icon: <AttachMoney />, path: '/payoutdashboard' },
-  
+
 
 ];
 

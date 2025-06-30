@@ -2,26 +2,27 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
    palette: {
+    mode: "light",
     background: {
-      default: '#f8f9fa',
-      paper: '#ffffff',
+      default: "#F5F8FF",
+      paper: "#FFFFFF",
     },
     primary: {
-      main: '#1976d2',
-      light: '#e3f2fd',
+      main: "#2563EB",
+    },
+    secondary: {
+      main: "#1D4ED8",
     },
     text: {
-      primary: '#2d3748',
-      secondary: '#64748b',
+      primary: "#0F172A",
+      secondary: "#475569",
     },
   },
   typography: {
-    fontFamily: '"Inter", system-ui',
-    h6: { fontWeight: 600 },
-    body2: { color: '#64748b' },
+    fontFamily: "Inter, Roboto, sans-serif",
   },
   shape: {
-    borderRadius: 8, // Standard border radius
+    borderRadius: 12,
   },
   shadows: [
     'none',
