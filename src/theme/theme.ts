@@ -28,7 +28,7 @@ const theme = createTheme({
     '0 1px 2px rgba(0,0,0,0.05)', // xs
     '0 4px 20px rgba(0,0,0,0.08)', // sm (matches your card)
     '0 6px 24px rgba(0,0,0,0.12)', // md (matches your card hover)
-    '0 8px 32px rgba(0,0,0,0.16)', // lg
+    '0 8px 32px rgba(0,0,0,0.16)','','','','','','','','','','','','','','','','','','','','' // lg
   ],
   components: {
     MuiCard: {

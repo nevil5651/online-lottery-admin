@@ -6,7 +6,8 @@ import {
   AdminPanelSettings,
   Event,
   AddCircleOutline,
-  MoneyOffRounded
+  MoneyOffRounded,
+  AttachMoney
 } from '@mui/icons-material';
 
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
@@ -32,7 +33,8 @@ const navItems = [
   { text: 'Create Draw', icon: <AddCircleOutline />, path: '/createdraw' },
   { text: 'Manage Draws', icon: <Event />, path: '/managedraws' },
   { text: 'Manage Admin ', icon: <AdminPanelSettings />, path: '/manageadmin' },
-   { text: 'Manage Finance ', icon: <MoneyOffRounded />, path: '/financedashboard' },
+  { text: 'Manage Finance ', icon: <MoneyOffRounded />, path: '/financedashboard' },
+  { text: 'Payout Dash ', icon: <AttachMoney />, path: '/payoutdashboard' },
   
 
 ];

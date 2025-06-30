@@ -14,6 +14,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { AdminManagement } from './features/admin-management/AdminManagement';
 import { AuthProvider } from './auth/AuthContext';
 import FinanceDashboard from './features/finance/FinanceDashboard';
+import PayoutDashboard from './features/payouts/components/PayoutDashboard';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
                   <Route path="/managedraws" element={<DrawList />} />
                   <Route path="/manageadmin" element={<AdminManagement />} />
                   <Route path="/financedashboard" element={<FinanceDashboard />} />
+                  <Route path="/payoutdashboard" element={<PayoutDashboard />} />
                 </Route>
               </Routes>
               </AuthProvider>
