@@ -35,8 +35,9 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
+          backgroundColor: '#FFFFFF', // Explicit white background
           borderRadius: '12px',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.06)', // Updated to match design
           transition: 'box-shadow 0.3s ease',
           '&:hover': {
             boxShadow: '0 6px 24px rgba(0,0,0,0.12)',
@@ -63,5 +64,6 @@ const theme = createTheme({
     },
   },
 });
+
 
 export default theme;

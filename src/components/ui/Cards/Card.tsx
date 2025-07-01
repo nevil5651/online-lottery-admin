@@ -1,4 +1,3 @@
-// src/components/ui/Card.tsx
 import { Card as MuiCard, CardContent } from '@mui/material';
 import { styled } from '@mui/material/styles';
 

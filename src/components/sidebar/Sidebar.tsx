@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Divider, styled } from '@mui/material';
 import {
   Dashboard as DashboardIcon,
@@ -47,81 +47,86 @@ const Sidebar = ({
   open: boolean; 
   onClose: () => void;
   isMobile: boolean;
-}) => (
-  <StyledDrawer
-    variant={isMobile ? 'temporary' : 'persistent'}
-    open={open}
-    onClose={onClose}
-    ModalProps={{ keepMounted: true }}
-  >
-    <Divider sx={{ 
-      borderColor: 'rgba(0, 0, 0, 0)',
-      mx: 2,
-      my: 1 
-    }} />
-    <List sx={{ px: 1.5 }}>
-      {navItems.map(item => (
-        <ListItemButton
-          key={item.text}
-          component={Link}
-          to={item.path}
-          onClick={() => isMobile && onClose()}
-          sx={{
-            borderRadius: '10px',
-            px: 2,
-            py: 0.75,
-            my: 1,
-            height: 48,
-            transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
-            '&:hover': {
-              backgroundColor: 'rgba(3, 128, 252, 0.1)',
-            },
-            '&.Mui-selected': {
-              backgroundColor: 'primary.light',
-              color: 'primary.main',
-              fontWeight: 600,
-              boxShadow: '0 2px 6px rgba(25, 118, 210, 0.2)',
-              '& .MuiListItemIcon-root': {
-                color: 'primary.main',
-              },
+}) => {
+  const location = useLocation();
+
+  return (
+    <StyledDrawer
+      variant={isMobile ? 'temporary' : 'persistent'}
+      open={open}
+      onClose={onClose}
+      ModalProps={{ keepMounted: true }}
+    >
+      <Divider sx={{ 
+        borderColor: 'rgba(0, 0, 0, 0)',
+        mx: 2,
+        my: 1 
+      }} />
+      <List sx={{ px: 1.5 }}>
+        {navItems.map(item => (
+          <ListItemButton
+            key={item.text}
+            component={Link}
+            to={item.path}
+            onClick={() => isMobile && onClose()}
+            selected={location.pathname === item.path}
+            sx={{
+              borderRadius: '10px',
+              px: 2,
+              py: 0.75,
+              my: 1,
+              height: 48,
+              transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
               '&:hover': {
-                backgroundColor: 'rgba(25, 118, 210, 0.12)',
+                backgroundColor: 'rgba(3, 128, 252, 0.1)',
               },
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                bottom: 0,
-                width: '4px',
-                backgroundColor: 'primary.main',
-                borderTopRightRadius: '4px',
-                borderBottomRightRadius: '4px',
-              },
-              '& .MuiTypography-root': {
+              '&.Mui-selected': {
+                //backgroundColor: theme => theme.palette.primary.light,
+                color: theme => theme.palette.primary.main,
                 fontWeight: 600,
-              }
-            },
-          }}
-        >
-          <ListItemIcon sx={{ 
-            minWidth: 40,
-            color: 'text.secondary',
-          }}>
-            {item.icon}
-          </ListItemIcon>
-          <ListItemText 
-            primary={item.text} 
-            primaryTypographyProps={{
-              fontSize: '0.925rem',
-              fontWeight: 500,
-              letterSpacing: '0.015em',
-            }} 
-          />
-        </ListItemButton>
-      ))}
-    </List>
-  </StyledDrawer>
-);
+                boxShadow: '0 2px 6px rgba(25, 118, 210, 0.2)',
+                '& .MuiListItemIcon-root': {
+                  color: theme => theme.palette.primary.main,
+                },
+                '&:hover': {
+                  backgroundColor: 'rgba(25, 118, 210, 0.12)',
+                },
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: '4px',
+                  //backgroundColor: theme => theme.palette.primary.main,
+                  //borderTopRightRadius: '4px',
+                  //borderBottomRightRadius: '4px',
+                },
+                '& .MuiTypography-root': {
+                  fontWeight: 600,
+                }
+              },
+            }}
+          >
+            <ListItemIcon sx={{ 
+              minWidth: 40,
+              color: 'text.secondary',
+            }}>
+              {item.icon}
+            </ListItemIcon>
+            <ListItemText 
+              primary={item.text} 
+              primaryTypographyProps={{
+                fontSize: '0.925rem',
+                fontWeight: 500,
+                letterSpacing: '0.015em',
+              }} 
+            />
+          </ListItemButton>
+        ))}
+      </List>
+    </StyledDrawer>
+  );
+};
 
 export default Sidebar;
