@@ -74,8 +74,8 @@ const PrizeTierEditor = () => {
             variant="outlined"
             startIcon={<Add />}
             onClick={() => push({
-              name: '',
-              value: 0,
+              name: 'Tier',
+              value: 1,
               valueType: 'fixed',
               winners: 1
             })}

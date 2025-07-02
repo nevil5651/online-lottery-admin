@@ -6,8 +6,9 @@ import {
   Grid
 } from '@mui/material';
 import { TextField, Typography } from '../../../../components/ui';
-import { DateTimePicker } from '@mui/x-date-pickers';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { useField } from 'formik';
+import dayjs, { Dayjs } from 'dayjs';
 
 const ScheduleControls = () => {
   const [scheduleField, , scheduleHelpers] = useField('schedule');
@@ -24,11 +25,10 @@ const ScheduleControls = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <DateTimePicker
-            label="Start Date & Time"
-            value={scheduleField.value.startDate}
-            onChange={(date) => scheduleHelpers.setValue({
+            value={scheduleField.value.startDate ? dayjs(scheduleField.value.startDate) : null}
+            onChange={(date: Dayjs | null) => scheduleHelpers.setValue({
               ...scheduleField.value,
-              startDate: date
+              startDate: date ? date.toISOString() : null
             })}
             slotProps={{ textField: { fullWidth: true } }}
           />
@@ -36,11 +36,10 @@ const ScheduleControls = () => {
         
         <Grid item xs={12} sm={6}>
           <DateTimePicker
-            label="End Date & Time"
-            value={scheduleField.value.endDate}
-            onChange={(date) => scheduleHelpers.setValue({
+            value={scheduleField.value.endDate ? dayjs(scheduleField.value.endDate) : null}
+            onChange={(date: Dayjs | null) => scheduleHelpers.setValue({
               ...scheduleField.value,
-              endDate: date
+              endDate: date ? date.toISOString() : null
             })}
             slotProps={{ textField: { fullWidth: true } }}
           />
@@ -48,11 +47,10 @@ const ScheduleControls = () => {
         
         <Grid item xs={12} sm={6}>
           <DateTimePicker
-            label="Draw Time"
-            value={scheduleField.value.drawTime}
-            onChange={(date) => scheduleHelpers.setValue({
+            value={scheduleField.value.drawTime ? dayjs(scheduleField.value.drawTime) : null}
+            onChange={(date: Dayjs | null) => scheduleHelpers.setValue({
               ...scheduleField.value,
-              drawTime: date
+              drawTime: date ? date.toISOString() : null
             })}
             slotProps={{ textField: { fullWidth: true } }}
           />

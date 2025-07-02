@@ -45,9 +45,9 @@ const DrawList = () => {
   return (
     <Container maxWidth="xl">
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" gutterBottom>
+        {/* <Typography variant="h4" gutterBottom>
           Draw Management
-        </Typography>
+        </Typography> */}
         
         <Paper sx={{ p: 3, mb: 3 }}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
