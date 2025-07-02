@@ -5,7 +5,7 @@ import {
   Grid,
   Alert
 } from '@mui/material';
-import { TextField,Typography, } from '../../../components/ui';
+import { TextField,Typography,Card } from '../../../components/ui';
 import type { DrawSecurity } from '../types';
 
 interface SecuritySettingsProps {
@@ -25,6 +25,7 @@ export const SecuritySettings = ({
 
   return (
     <Box>
+      <Card sx={{ p: 3, mb: 3 }}>
       <Typography variant="h6" gutterBottom>
         Security & Validation
       </Typography>
@@ -86,6 +87,7 @@ export const SecuritySettings = ({
           </Grid>
         )}
       </Grid>
+      </Card>
     </Box>
   );
 };

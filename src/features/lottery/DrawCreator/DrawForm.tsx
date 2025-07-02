@@ -3,7 +3,7 @@ import { Box, Stepper, Step, StepLabel,  } from '@mui/material';
 import { Button } from '../../../components/ui';
 import { PrizeTierEditor } from './PrizeTierEditor';
 import { SecuritySettings } from './SecuritySettings';
-//import { DrawSummaryCard } from '../DrawSummaryCard';
+import { DrawSummaryCard } from '../DrawSummaryCard';
 import { useDrawValidation } from '../../../hooks/useDrawValidation';
 import type { DrawFormData } from '../types';
 import { ScheduleControls } from './ScheduleControls';

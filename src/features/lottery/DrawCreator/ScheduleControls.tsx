@@ -7,7 +7,7 @@ import {
   MenuItem,
   InputAdornment
 } from '@mui/material';
-import { Typography,TextField } from '../../../components/ui';
+import { Typography,TextField ,Card} from '../../../components/ui';
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -62,6 +62,7 @@ export const ScheduleControls = ({
 
   return (
     <Box>
+      <Card sx={{ p: 3, mb: 3 }}>
       <Typography variant="h6" gutterBottom>
         Schedule Configuration
       </Typography>
@@ -208,6 +209,8 @@ export const ScheduleControls = ({
           )}
         </Grid>
       </LocalizationProvider>
+
+      </Card>
       
       <Box sx={{ mt: 3, p: 2, bgcolor: 'background.paper', borderRadius: 1 }}>
         <Typography variant="subtitle2" gutterBottom>
@@ -226,6 +229,7 @@ export const ScheduleControls = ({
           All times shown in {userTimezone}
         </Typography>
       </Box>
+      
     </Box>
   );
 };

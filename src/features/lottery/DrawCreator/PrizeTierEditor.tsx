@@ -7,7 +7,8 @@ import {
 import { 
   Button, 
   TextField, 
-  Typography
+  Typography,
+  Card
 } from '../../../components/ui';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -48,6 +49,7 @@ export const PrizeTierEditor = ({ prizes, onChange, errors }: PrizeTierEditorPro
 
   return (
     <Box>
+      <Card sx={{ p: 3, mb: 3}}>
       <Typography variant="h6" gutterBottom>
         Prize Distribution
       </Typography>
@@ -145,6 +147,8 @@ export const PrizeTierEditor = ({ prizes, onChange, errors }: PrizeTierEditorPro
           {errors.prizeTotal}
         </Typography>
       )}
+
+      </Card>
     </Box>
   );
 };
