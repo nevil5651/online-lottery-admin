@@ -96,6 +96,8 @@ export const AdminList = () => {
         </button>
       </div>
 
+<div style={{ width: '100%', overflowX: 'auto' }}>
+        <div style={{ minWidth: 600 }}>
       <DataGrid
         rows={admins}
         columns={columns}
@@ -103,7 +105,22 @@ export const AdminList = () => {
         pageSizeOptions={[10, 25, 50]}
         getRowId={(row) => row.id}
         disableRowSelectionOnClick
+        sx={
+          {
+            '& .MuiDataGrid-cell:hover': {
+              color: 'primary.main',
+            },
+            '& .MuiDataGrid-columnHeaderTitle': {
+              fontWeight: 600,
+            },
+            '& .MuiDataGrid-row': {
+              cursor: 'pointer',
+            },
+          }
+        }
       />
+      </div>
+    </div>
 
       {selectedAdmin && (
         <RoleEditDialog

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Card, CardContent, Grid, Typography, Skeleton } from '@mui/material';
+import { CardContent,Grid,Skeleton } from '@mui/material';
+import {Card,Typography} from '../../../components/ui';
 import type { Wallet } from '../types/financeTypes';
 
 interface WalletOverviewProps {
@@ -9,7 +10,7 @@ interface WalletOverviewProps {
 
 const WalletOverview: React.FC<WalletOverviewProps> = ({ wallet, loading }) => {
   return (
-    <Card elevation={3}>
+    <Card variant="outlined" sx={{ margin: 3 }}>
       <CardContent>
         <Typography variant="h6" gutterBottom>
           Wallet Summary
@@ -20,11 +21,14 @@ const WalletOverview: React.FC<WalletOverviewProps> = ({ wallet, loading }) => {
             {loading ? (
               <Skeleton variant="rectangular" height={80} />
             ) : (
-              <Card variant="outlined">
+              <Card variant="outlined" >
                 <CardContent>
                   <Typography color="textSecondary">Available Balance</Typography>
-                  <Typography variant="h4">
-                    {wallet?.currency} {wallet?.balance.toFixed(2)}
+                  <Typography variant="body1">
+                    {wallet
+                      ? `${wallet.currency} ${wallet.balance.toFixed(2)}`
+                      : <Typography color="textSecondary">No data</Typography>
+                    }
                   </Typography>
                 </CardContent>
               </Card>
@@ -38,8 +42,11 @@ const WalletOverview: React.FC<WalletOverviewProps> = ({ wallet, loading }) => {
               <Card variant="outlined">
                 <CardContent>
                   <Typography color="textSecondary">Locked Funds</Typography>
-                  <Typography variant="h4">
-                    {wallet?.currency} {wallet?.lockedBalance.toFixed(2)}
+                  <Typography variant="body1">
+                    {wallet
+                      ? `${wallet.currency} ${wallet.lockedBalance.toFixed(2)}`
+                      : <Typography color="textSecondary">No data</Typography>
+                    }
                   </Typography>
                 </CardContent>
               </Card>
